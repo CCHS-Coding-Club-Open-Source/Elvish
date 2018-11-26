@@ -1,0 +1,30 @@
+Parser class
+parseAll() method:
+	Param: all code
+	Return: ArrayList of lines of code
+parseLine() method:
+	
+(Other methods as needed)
+
+Methods class:
+get() method
+
+show() method
+
+Interpreter class:
+run() method:
+	Go through each line of code in ArrayList
+
+debug()
+
+Elvish class:
+main()
+	make parser object, call parseAll()
+	make interpreter object, call run()
+
+x = arg //TODO
+?
+    	/do this
+	/then this
+>
+	/else do this
