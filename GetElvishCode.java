@@ -31,16 +31,11 @@ public class GetElvishCode
         return code;
     }
 
-    /**
-     * Gets all Elvish code from external file
-     *
-     * @author Tal Kronrod
-     * @param fileName a .elv file
-     * @return the entire text of the file
-     */
     public String getCodeFromFile(String fileName)
     {
-
+        /**
+         * @author Tal Kronrod
+         */
         File file = new File(fileName);
         byte[] data = new byte[0];
         try 
@@ -58,7 +53,7 @@ public class GetElvishCode
             str = new String(data, "UTF-8");
         }
         catch (UnsupportedEncodingException e) {}
-
+        
         return str;
     }
 }
