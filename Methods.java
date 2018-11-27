@@ -101,7 +101,7 @@ public class Methods
         //find the =, which implies variable assignment:
         int equalsLoc = code.indexOf('=', mostRecentPipeLoc);
         //determine variable name:
-        String var1name = code.substring(mostRecentPipeLoc + 1, equalsLoc).trim(); 
+        String var1name = code.substring(mostRecentPipeLoc, equalsLoc).trim(); 
 
         //find end of argument to be printed:
         int endQuoteLoc = code.indexOf("\"", lParenLoc + 2);
