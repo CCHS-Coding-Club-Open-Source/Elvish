@@ -1,15 +1,15 @@
-
 /**
  * Write a description of class Variable here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author CC Coding Club
+ * @version 0.1
  */
 public class Variable
 {
     String name;
     String contents;
     //String type;
+    
     public Variable(String n, String c)
     {
         name = n;
