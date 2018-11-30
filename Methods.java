@@ -14,10 +14,10 @@ public class Methods
     
     /**
      * Elvish method for displaying to console
+     *
      * @param code the entire .elv file
      * @param lParenLoc location of the ( before the @show argument to be printed
      * @param variables list of variables and their contents in case one appears in arg
-     * 
      */
     public void show(String code, int lParenLoc, ArrayList<Variable> variables)
     {
@@ -29,8 +29,7 @@ public class Methods
         int rParenLoc = code.indexOf(")", lParenLoc + 1);
         
         //get the argument being sent to show()
-        String contents = code.substring(lParenLoc + 1, rParenLoc);  //@show(contents)|
-        
+        String contents = code.substring(lParenLoc + 1, rParenLoc);        
         boolean inString = false;
         boolean inVariable = false;
                
@@ -142,7 +141,19 @@ public class Methods
         //create new variable:
         if(!varExists)
         {
-            Variable v = new Variable(var1name, var1);
+            Variable v;
+        
+            //if variable is a number
+            if(Character.isDigit(var1.charAt(0)))
+            {
+               v = new Variable(var1name, var1, "num");
+            }
+            //if variable is a string
+            else
+            {
+               v = new Variable(var1name, var1, "string");
+            }
+               
             variables.add(v);
         }
     }
