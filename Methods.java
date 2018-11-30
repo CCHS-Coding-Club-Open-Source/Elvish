@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * (checking for github)
+ * Methods
  * Code for executing elvish methods
  *
  * @author CC Coding Club
