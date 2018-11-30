@@ -21,6 +21,7 @@ public class Converter
         code = code.replaceAll("\n", "");
         
         Methods m = new Methods();
+        
         //eventually will be all keywords:
         //KeyWords kw = new KeyWords();
 
@@ -28,11 +29,10 @@ public class Converter
 
         Scanner scan = new Scanner(System.in);
 
-        boolean endOfFile = false;
-        boolean method = false;
-        int pointer = 0;  //tracks which character we are parsing
-
-        int mostRecentPipeLoc = 0;
+        int     pointer           = 0;  //tracks which character we are parsing
+        int     mostRecentPipeLoc = 0;
+        boolean endOfFile         = false;
+        boolean method            = false;
 
         //loop through entire elvish file, looking for method calls:
         while(!endOfFile)
@@ -43,6 +43,7 @@ public class Converter
                 pointer++;  //move to next character
                 method = false;
             }
+            
             if(method)
             {
                 //find which method it is!
@@ -74,4 +75,3 @@ public class Converter
         }
     }
 }
-
