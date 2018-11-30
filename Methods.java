@@ -17,7 +17,6 @@ public class Methods
      * @param code the entire .elv file
      * @param lParenLoc location of the ( before the @show argument to be printed
      * @param variables list of variables and their contents in case one appears in arg
-     * 
      */
     public void show(String code, int lParenLoc, ArrayList<Variable> variables)
     {
