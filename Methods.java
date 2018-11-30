@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Methods
+ * (checking for github)
  * Code for executing elvish methods
  *
- * @author CodingClub
- * @version 0.3
+ * @author CC Coding Club
+ * @version 0.4
  */
 public class Methods
 {
@@ -22,7 +22,7 @@ public class Methods
     {
         String arg = "";
         String finalString = "";
-        int pointer = lParenLoc;
+        int    pointer = lParenLoc;
         
         //find second quote symbol:
         int rParenLoc = code.indexOf(")", lParenLoc + 1);
@@ -113,19 +113,35 @@ public class Methods
     {
         //find the =, which implies variable assignment:
         int equalsLoc = code.indexOf('=', mostRecentPipeLoc);
+        
         //determine variable name:
-        String var1name = code.substring(mostRecentPipeLoc, equalsLoc).trim(); 
+        String varName = code.substring(mostRecentPipeLoc, equalsLoc).trim(); 
 
         //find end of argument to be printed:
-        int endQuoteLoc = code.indexOf("\"", lParenLoc + 2);
-        String arg = code.substring(pointer + 2, endQuoteLoc);
+        int     endQuoteLoc = code.indexOf("\"", lParenLoc + 2);
+        String  arg = code.substring(pointer + 2, endQuoteLoc);
+        boolean varExists = false;
         
         System.out.println(arg);
-        //wait for user input:
-        String var1 = scan.nextLine();
         
-        //create new variable (TODO: check for variable already declared)
-        Variable v = new Variable(var1name, var1);
-        variables.add(v);
+        //wait for user input:
+        String var = scan.nextLine();
+        
+        //check if variable already exists:
+        for(Variable v : variables)
+        { 
+            //change contents of variable:
+            if(v.name.equals(varName.substring(1, varName.length())))            
+               varExists = true;
+               v.contents = var;
+            }
+        }
+        
+        //create new variable:
+        if(!varExists)
+        {
+            Variable v = new Variable(varName, var);
+            variables.add(v);
+        }
     }
 }
