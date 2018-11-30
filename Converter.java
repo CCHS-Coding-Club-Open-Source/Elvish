@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 /**
  * The main Elvish interpreter class
  *
@@ -26,9 +27,6 @@ public class Converter
         //make methods object - will have methods
 
         Scanner scan = new Scanner(System.in);
-
-        //System.out.println("Code:\n" + code + "\n");
-        //System.out.println(code);
 
         boolean endOfFile = false;
         boolean method = false;
@@ -64,7 +62,6 @@ public class Converter
                 }
                 else if(methodName.equals("get"))
                 {
-
                     m.get(code, mostRecentPipeLoc, pointer, variables, lParenLoc);
                 }
                 //point to start of next line of code:
@@ -73,7 +70,6 @@ public class Converter
                 //if | not found or if at end of file:
                 if(pointer == 0 || pointer == code.length()) endOfFile = true;
                 mostRecentPipeLoc = pointer - 1;
-                // System.out.println(pointer);
             }
         }
     }

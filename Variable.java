@@ -9,7 +9,6 @@ public class Variable
     String name;
     String contents;
     //String type;
-    
     public Variable(String n, String c)
     {
         name = n;

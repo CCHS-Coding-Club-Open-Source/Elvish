@@ -1,2 +1,3 @@
-Job = @get("What is your job?")|
-@show("Your job is: " Job)|
+Job = @get("what is your job?")|
+@show("Nice")|
+@show("You are a " Job ".")|

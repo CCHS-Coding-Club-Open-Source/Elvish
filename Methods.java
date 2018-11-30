@@ -17,6 +17,7 @@ public class Methods
      * @param code the entire .elv file
      * @param lParenLoc location of the ( before the @show argument to be printed
      * @param variables list of variables and their contents in case one appears in arg
+     * 
      */
     public void show(String code, int lParenLoc, ArrayList<Variable> variables)
     {
@@ -115,7 +116,7 @@ public class Methods
         int equalsLoc = code.indexOf('=', mostRecentPipeLoc);
         
         //determine variable name:
-        String varName = code.substring(mostRecentPipeLoc, equalsLoc).trim(); 
+        String var1name = code.substring(mostRecentPipeLoc, equalsLoc).trim(); 
 
         //find end of argument to be printed:
         int     endQuoteLoc = code.indexOf("\"", lParenLoc + 2);
@@ -125,22 +126,23 @@ public class Methods
         System.out.println(arg);
         
         //wait for user input:
-        String var = scan.nextLine();
+        String var1 = scan.nextLine();
         
         //check if variable already exists:
         for(Variable v : variables)
         { 
             //change contents of variable:
-            if(v.name.equals(varName.substring(1, varName.length())))            
+            if(v.name.equals(var1name.substring(1, var1name.length())))
+            {    
                varExists = true;
-               v.contents = var;
+               v.contents = var1;
             }
         }
         
         //create new variable:
         if(!varExists)
         {
-            Variable v = new Variable(varName, var);
+            Variable v = new Variable(var1name, var1);
             variables.add(v);
         }
     }
