@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
- * (checking for github)
+ * Methods
  * Code for executing elvish methods
  *
  * @author CodingClub
@@ -21,8 +22,8 @@ public class Methods
     public void show(String code, int lParenLoc, ArrayList<Variable> variables)
     {
         String arg = "";
-        int pointer = lParenLoc;
         String finalString = "";
+        int pointer = lParenLoc;
         
         //find second quote symbol:
         int rParenLoc = code.indexOf(")", lParenLoc + 1);
@@ -32,7 +33,7 @@ public class Methods
         
         boolean inString = false;
         boolean inVariable = false;
-        
+               
         String varName = "";
         //loop through all characters, finding Strings or String variables:
         for(int i = 0; i < contents.length(); i++)
@@ -47,8 +48,10 @@ public class Methods
             {
                 inString = true;  //beginning of String
             }
-            else if(c.equals("\"") && inString) inString = false;
-
+            else if(c.equals("\"") && inString)
+            {
+                inString = false;
+            }
             //start or inside of variable name:
             else if(Character.isAlphabetic(c.charAt(0)))
             {
@@ -61,27 +64,38 @@ public class Methods
                 else //adding to variable name:
                 {
                     varName += c;
-                   // System.out.println(varName);
+                }
+                
+                if(i == contents.length() - 1)
+                {
+                    //loop through all variables, checking .name
+                    for(Variable v : variables)
+                    {
+                        if(v.name.equals(varName)) //found the variable object
+                        {
+                           System.out.print(arg);
+                            arg += v.contents;
+                        }
+                    }
                 }
             }
             //reached end of variable name:
             else if(inVariable)
             {
-            //System.out.println("in variable, then for loop");
                 //loop through all variables, checking .name
                 for(Variable v : variables)
-                {
+                {                
                     if(v.name.equals(varName)) //found the variable object
-                    {
+                    {                       
                         arg += v.contents;
-                       // System.out.println("arg in for loop:  " + arg);
                     }
                 }
+                
                 inVariable = false;
             }
         }
+        
         System.out.println(arg);
-
     }
 
     /**
@@ -110,10 +124,9 @@ public class Methods
         System.out.println(arg);
         //wait for user input:
         String var1 = scan.nextLine();
-
+        
         //create new variable (TODO: check for variable already declared)
         Variable v = new Variable(var1name, var1);
         variables.add(v);
-
     }
 }
