@@ -34,7 +34,7 @@ Each line in a conditional is preceded by a `/` character <br>
 
 ### Comments
 All comments are enclosed in parentheses <br>
-`(this is an example)` <br>
+`(this is an example)` <br><br>
 Each line in a block comment is preceded by a `/` character
 ```
 (
