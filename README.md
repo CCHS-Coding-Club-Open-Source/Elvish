@@ -19,11 +19,14 @@ Else if: `?` <br>
 Else: `>` <br>
 
 Each line in a conditional is preceded by a `/` character <br>
-
+To nest conditionals, use more slashes <br>
 ```
 ? example = "yes"
   / answer = "this"|
   / @show(answer)|
+  ? example2 = "yes"
+    // answer = "hello"|
+    // @show(answer2)|
   / new_answer = @get(what is your answer)|
 ?> example = "no"
   / answer = "that"|
