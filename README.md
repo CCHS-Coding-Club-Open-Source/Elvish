@@ -19,7 +19,7 @@ Else if: `?` <br>
 Else: `>` <br>
 
 Each line in a conditional is preceded by a `/` character <br>
-To nest conditionals, use more slashes <br>
+To nest conditionals, multiple slashes are used <br>
 ```
 ? example = "yes"
   / answer = "this"|
