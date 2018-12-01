@@ -21,11 +21,11 @@ Else: `>` <br>
 Each line in a conditional is preceded by a `/` character <br>
 
 ```
-? example == "yes"
+? example = "yes"
   / answer = "this"|
   / @show(answer)|
   / @get(what is your answer)|
-?> example == "no"
+?> example = "no"
   / answer = "that"|
 >
   / @show("false")|
