@@ -33,8 +33,15 @@ Each line in a conditional is preceded by a `/` character <br>
 ```
 
 ### Comments
-All comments will be enclosed in parentheses <br>
-`(this is an example)`
+All comments are enclosed in parentheses <br>
+`(this is an example)` <br>
+Each line of a block comment begin with a `/` character
+```
+(
+  / this is an example
+  / of a block comment
+)
+```
 
 ## Team
 | **Anthony Beckwith** | **Andrew Cohen** | **Sophia Hubscher** |
