@@ -6,8 +6,8 @@ Every line ends in a `|` character
 
 ### Methods
 Denoted by a `@` character <br>
-Display text: `@show("TEXT")|` <br>
-Get text: `@get("TEXT")|` <br>
+Display text: `@show("text")|` <br>
+Get text: `@get("text")|` <br>
 
 ### Variables
 Not preceded by any non-alphabetic characters <br>
