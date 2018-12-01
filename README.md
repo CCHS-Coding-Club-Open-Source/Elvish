@@ -32,6 +32,10 @@ Each line in a conditional is preceded by a `/` character <br>
   / @get(what now?)|
 ```
 
+### Comments
+All comments will be enclosed in parentheses <br>
+`(this is an example)`
+
 ## Team
 | **Anthony Beckwith** | **Andrew Cohen** | **Sophia Hubscher** |
 | :---: | :---:| :---: |
