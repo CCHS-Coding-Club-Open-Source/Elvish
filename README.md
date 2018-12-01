@@ -24,12 +24,12 @@ Each line in a conditional is preceded by a `/` character <br>
 ? example = "yes"
   / answer = "this"|
   / @show(answer)|
-  / @get(what is your answer)|
+  / new_answer = @get(what is your answer)|
 ?> example = "no"
   / answer = "that"|
 >
   / @show("false")|
-  / @get(what now?)|
+  / new_answer = @get(what now?)|
 ```
 
 ### Comments
