@@ -36,7 +36,7 @@ To nest conditionals, multiple slashes are used <br>
 ```
 
 ### Comments
-All comments are enclosed in parentheses <br>
+All comments are enclosed in parentheses and may not be on the same line as other code <br>
 `(this is an example)` <br><br>
 Each line in a block comment is preceded by a `/` character
 ```
